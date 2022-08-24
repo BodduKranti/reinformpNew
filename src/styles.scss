@@ -30,6 +30,7 @@ $black: #000000;
 $linkColor: #6487b4;
 $linkActiveBg: #c7dff4;
 $accordionTitleClr: #235591;
+$tableBorder: #c8d5e4;
 
 //Whole site
 body {
@@ -37,7 +38,7 @@ body {
     padding: 30px;
     background-color: $mainBg !important;
     height: 100vh;
-    @media (max-width:800px){
+    @media (max-width: 800px) {
         padding: 10px;
     }
 }
@@ -69,6 +70,12 @@ li {
 @mixin boxShadow {
     box-shadow: 0px 11px 17px #00000096;
 }
+@mixin borderClr {
+    border-color: $tableBorder !important;
+}
+.tableBroder {
+    @include borderClr();
+}
 
 //Text Color
 .text {
@@ -78,8 +85,8 @@ li {
     &-DarkOrange {
         color: $primarColorDarkOrange;
     }
-    &-basicColorDarkGray{
-        color:$basicColorDarkGray;
+    &-basicColorDarkGray {
+        color: $basicColorDarkGray;
     }
 }
 
@@ -142,6 +149,12 @@ li {
     }
     &-activate {
         background-color: $secondaryLightBlue;
+    }
+    &-light{
+        &:hover{
+            background-color: $primarColorDarkBlue;
+            color: $white;
+        }
     }
 }
 
@@ -342,5 +355,37 @@ ul {
 }
 
 .pageContainer {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 185px);
+    overflow: hidden;
+    overflow-y: auto;
+    // @media (max-width:800px){
+    //     padding-bottom: 50px !important;
+    // }
+}
+
+.table {
+    &.tableBroder {
+        border: 1px solid $tableBorder;
+    }
+    .thead-dark {
+        background-color: $bgLightBlue;
+        color: $primarColorDarkBlue;
+        border-bottom: 1px solid $tableBorder;
+        th:first-child {
+            text-align: center;
+        }
+    }
+    tbody {
+        th,
+        td {
+            font: $fwLight 16px $mainFontFamily;
+            color: $basicColorDarkGray;
+            vertical-align: middle;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        th {
+            text-align: center;
+        }
+    }
 }
