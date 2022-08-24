@@ -1,0 +1,102 @@
+<figure class="mt-5 mb-4">
+    <img src="assets/images/logo.png" class="img-fluid" alt="">
+</figure>
+
+<div class="accordion leftAccordion" id="accordionExample">
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Accord-1"
+                aria-expanded="true" aria-controls="Accord-1">
+                Dashboard
+            </button>
+        </h2>
+        <div id="Accord-1" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <ul class="navLinks">
+                    <li>
+                        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Acc-2"
+                aria-expanded="false" aria-controls="Acc-2">
+                Open Items
+            </button>
+        </h2>
+        <div id="Acc-2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <ul class="navLinks">
+                    <li>
+                        <a routerLink="open-itms" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>Open Itms</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Acc-3"
+                aria-expanded="false" aria-controls="Acc-3">
+                Reconciliation Statements
+            </button>
+        </h2>
+        <div id="Acc-3" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <ul class="navLinks">
+                    <li>
+                        <a routerLink="latest-reconciliation-statements" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>Latest Reconciliation Statements</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="search-specific-statement" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>Search Specific Statement</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="current-fy" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>[Current FY] Reconciliation Statements</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="previous-fy" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>[Previous FY] Reconciliation Statements</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="search-by-partner" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>Search by Partner</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="request-archived-statements" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                            
+                            <span>Request Archived Statements</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

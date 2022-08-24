@@ -1,1 +1,346 @@
 /* You can add global styles to this file, and also import other style files */
+
+//Font family link for whole site
+@import "https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap";
+
+$mainFontFamily: "Mulish", sans-serif;
+$fwLight: 300;
+$fwBold: 700;
+$fwsemiBold: 600;
+$fwExtrabold: 800;
+$fwRegular: 400;
+
+//Color Pallets for whole site
+$mainBg: #a4a4a4;
+$primarColorDarkBlue: #235591;
+$primarColorDarkOrange: #ff6e00;
+$secondaryDarkBlue: #4a75a6;
+$secondaryLightBlue: #819eb6;
+$basicColorDarkGray: #5f6e7d;
+$basicColorLightGray: #a0afbe;
+$bgLightBlue: #e6f0fa;
+$bgLightGray: #f1f3f4;
+$positiveDarkGreen: #23c896;
+$PositiveLightGreen: #a0e6d2;
+$NegativeDarkRed: #ff3600;
+$NegativeLightRed: #ffcabc;
+$white: #ffffff;
+$black: #000000;
+
+$linkColor: #6487b4;
+$linkActiveBg: #c7dff4;
+$accordionTitleClr: #235591;
+
+//Whole site
+body {
+    font: $fwRegular 18px $mainFontFamily;
+    padding: 30px;
+    background-color: $mainBg !important;
+    height: 100vh;
+    @media (max-width:800px){
+        padding: 10px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $mainFontFamily;
+    font-weight: $fwBold;
+    margin: 0;
+}
+a,
+a:link,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+//mixin
+@mixin boxShadow {
+    box-shadow: 0px 11px 17px #00000096;
+}
+
+//Text Color
+.text {
+    &-DarkBlue {
+        color: $primarColorDarkBlue;
+    }
+    &-DarkOrange {
+        color: $primarColorDarkOrange;
+    }
+    &-basicColorDarkGray{
+        color:$basicColorDarkGray;
+    }
+}
+
+//bg Color
+.bg {
+    &-DarkBlue {
+        background-color: $primarColorDarkBlue;
+    }
+    &-DarkOrange {
+        background-color: $primarColorDarkOrange;
+    }
+    &-secondaryDarkBlue {
+        background-color: $secondaryDarkBlue;
+    }
+    &-secondaryLightBlue {
+        background-color: $secondaryLightBlue;
+    }
+    &-basicColorLightGray {
+        background-color: $basicColorLightGray;
+    }
+    &-LightBlue {
+        background-color: $bgLightBlue;
+    }
+}
+
+//btn Color
+.btn {
+    &-DarkBlue {
+        background-color: $primarColorDarkBlue;
+        &:hover {
+            color: $white;
+        }
+    }
+    &-DarkOrange {
+        background-color: $primarColorDarkOrange;
+        color: $white;
+        &:hover {
+            color: $white;
+            background-color: $basicColorDarkGray;
+        }
+    }
+    &-secondaryDarkBlue {
+        background-color: $secondaryDarkBlue;
+        &:hover {
+            color: $white;
+        }
+    }
+    &-secondaryLightBlue {
+        background-color: $secondaryLightBlue;
+        &:hover {
+            color: $white;
+        }
+    }
+    &-default {
+        background-color: $NegativeDarkRed;
+        color: $white;
+        &:hover {
+            background-color: $secondaryDarkBlue;
+        }
+    }
+    &-activate {
+        background-color: $secondaryLightBlue;
+    }
+}
+
+//Font family use entire site
+h1 {
+    font-size: 50px;
+    @media (max-width: 1024px) {
+        font-size: 45px;
+    }
+    @media (max-width: 767px) {
+        font-size: 35px;
+    }
+    @media (max-width: 500px) {
+        font-size: 30px;
+    }
+}
+
+h2 {
+    font-size: 40px;
+    @media (max-width: 1024px) {
+        font-size: 35px;
+    }
+    @media (max-width: 767px) {
+        font-size: 30px;
+    }
+    @media (max-width: 500px) {
+        font-size: 28px;
+    }
+}
+
+h3 {
+    font-size: 35px;
+    @media (max-width: 1024px) {
+        font-size: 30px;
+    }
+    @media (max-width: 767px) {
+        font-size: 26px;
+    }
+    @media (max-width: 500px) {
+        font-size: 24px;
+    }
+}
+
+h4 {
+    font-size: 30px;
+    @media (max-width: 1024px) {
+        font-size: 28px;
+    }
+    @media (max-width: 767px) {
+        font-size: 24px;
+    }
+    @media (max-width: 500px) {
+        font-size: 22px;
+    }
+}
+
+h5 {
+    font-size: 27px;
+    @media (max-width: 1024px) {
+        font-size: 24px;
+    }
+    @media (max-width: 767px) {
+        font-size: 22px;
+    }
+    @media (max-width: 500px) {
+        font-size: 18px;
+    }
+}
+
+//mainsection
+.mainCotainer {
+    height: 100%;
+    float: left;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+
+    .topHeader {
+        h4 {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    .leftContainer {
+        width: 350px;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
+        float: left;
+        padding-bottom: 90px;
+        @include boxShadow();
+        position: relative;
+        transition: all 0.5s ease-in-out;
+        img {
+            width: 150px;
+        }
+    }
+    .contentContainer {
+        width: calc(100% - 350px);
+        float: left;
+        transition: all 0.5s ease-in-out;
+    }
+
+    @media (max-width: 800px) {
+        a.closeIcon {
+            color: $primarColorDarkBlue;
+            position: absolute;
+            right: 10px;
+            top: 11px;
+        }
+        .topHeader {
+            h4 {
+                position: relative;
+                bottom: 0;
+            }
+        }
+        .leftContainer {
+            left: -370px;
+            width: 0;
+            position: absolute;
+            height: calc(100vh - 20px);
+        }
+        .contentContainer {
+            width: 100%;
+        }
+        &.active {
+            .leftContainer {
+                left: 0;
+                width: 350px;
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+                z-index: 9;
+                padding-left: 20px !important;
+            }
+        }
+    }
+}
+
+//Accordion
+.accordion {
+    &.leftAccordion {
+        .accordion-item {
+            border-left: 0;
+            border-right: 0;
+            border-color: $basicColorLightGray;
+            background-color: transparent;
+            border-radius: 0;
+            .accordion-button {
+                border-color: #000 !important;
+                padding: 10px 0;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                background-color: transparent;
+                color: $accordionTitleClr;
+                &:not(.collapsed) {
+                    color: $primarColorDarkBlue;
+                    font-weight: $fwBold;
+                    box-shadow: 0 0 0 transparent;
+                }
+                &::after {
+                    margin-right: 20px;
+                    width: 16px;
+                    background-size: contain;
+                }
+            }
+        }
+        .accordion-body {
+            font-size: 18px;
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+}
+
+ul {
+    &.navLinks {
+        margin-bottom: 10px;
+        li {
+            padding: 0 10px;
+            a {
+                font-size: 16px;
+                color: $linkColor;
+                width: 100%;
+                padding: 8px 10px;
+                display: block;
+                &.active {
+                    background-color: $linkActiveBg;
+                }
+            }
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.pageContainer {
+    height: calc(100vh - 50px);
+}
