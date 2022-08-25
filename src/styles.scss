@@ -31,6 +31,7 @@ $linkColor: #6487b4;
 $linkActiveBg: #c7dff4;
 $accordionTitleClr: #235591;
 $tableBorder: #c8d5e4;
+$border-disable: #e3eaf1;
 
 //Whole site
 body {
@@ -150,8 +151,8 @@ li {
     &-activate {
         background-color: $secondaryLightBlue;
     }
-    &-light{
-        &:hover{
+    &-light {
+        &:hover {
             background-color: $primarColorDarkBlue;
             color: $white;
         }
@@ -218,6 +219,19 @@ h5 {
     }
     @media (max-width: 767px) {
         font-size: 22px;
+    }
+    @media (max-width: 500px) {
+        font-size: 18px;
+    }
+}
+
+h6 {
+    font-size: 24px;
+    @media (max-width: 1024px) {
+        font-size: 22px;
+    }
+    @media (max-width: 767px) {
+        font-size: 18px;
     }
     @media (max-width: 500px) {
         font-size: 18px;
@@ -336,10 +350,11 @@ ul {
     &.navLinks {
         margin-bottom: 10px;
         li {
-            padding: 0 10px;
+            padding: 0;
             a {
                 font-size: 16px;
                 color: $linkColor;
+                font-weight: $fwLight;
                 width: 100%;
                 padding: 8px 10px;
                 display: block;
@@ -374,6 +389,10 @@ ul {
         th:first-child {
             text-align: center;
         }
+        th {
+            font: $fwBold 16px $mainFontFamily;
+            padding: 12px 10px;
+        }
     }
     tbody {
         th,
@@ -386,6 +405,25 @@ ul {
         }
         th {
             text-align: center;
+        }
+    }
+}
+
+.form {
+    label {
+        font-size: 14px;
+    }
+    .form-control,
+    .form-select {
+        font-size: 14px;
+    }
+    &.disabled {
+        
+        color: #afb6be;
+        .form-control,
+        .form-select {
+            border-color: $border-disable;
+            color: #afb6be;
         }
     }
 }
